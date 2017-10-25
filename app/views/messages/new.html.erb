@@ -1,8 +1,7 @@
-<%= form_for :message do |f| %>
-  Name: <%= f.text_field :name %><br>
+<%= form_for :message, url: :messages do |f| %>
+  Author: <%= f.text_field :author %><br>
   Message: <%= f.text_area :body %><br>
   Title: <%= f.text_field :title %><br>
   Postscript: <%= f.text_field :postscript %><br>
   <%= f.submit %>
 <% end %>
-  
