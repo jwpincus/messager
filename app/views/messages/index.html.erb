@@ -1,0 +1,7 @@
+<% if flash[:success] %>
+<h3 style="border-style:solid; padding: 20px;"> 
+<%= flash[:success] %>
+</h3>
+<% end %>
+
+<%= link_to 'Write a new message to Cayley!', new_message_path %>
