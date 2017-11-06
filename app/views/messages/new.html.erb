@@ -1,19 +1,23 @@
 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 <style>
 p {
-  letter-spacing: .15em; /* Adjust as needed */
   font-family: 'Share Tech Mono', monospace;
   font-style: normal;
 }
 .typewritten {
-  max-width: 75%;
+  max-width: 768px;
   border-style: solid;
+  margin: 20px;
+  padding: 10px;
+}
+form {
+  max-width: 768px;
   margin: 20px;
   padding: 10px;
 }
 
 </style>
-<p> <h2>Click anywhere to start customising your note to Cayley</h2></p>
+<p> <h2 style="padding: 20px;">Click anywhere to start customising your note to Cayley</h2></p>
 <div class='typewritten'>
   <p contenteditable='true', onclick="document.execCommand('selectAll',false,null)" class='author'>A memorandum from the desk of: The World Wide Web</p><br>
   <p contenteditable='true', onclick="document.execCommand('selectAll',false,null)" class='title'>Innovator, typist, skydiver, memo writer </p><br><br>
@@ -23,13 +27,13 @@ p {
 </div>
 <div >
   <%= form_for :message, url: :messages do |f| %>
+    <p> Click send to have this note typed and delivered directly to Cayley's living room</p>
+    <%= f.submit 'Send it to the press!' %>
     <%= f.text_field :author, style: 'display: none;' %><br>
     <%= f.text_area :body, style: 'display: none;' %><br>
     <%= f.text_field :title, style: 'display: none;'%><br>
     <%= f.text_field :postscript, style: 'display: none;' %><br>
     <%= f.text_field :signature, style: 'display: none;' %><br>
-    <p> Click send to have this note typed and delivered directly to Cayley's living room</p>
-    <%= f.submit 'Send it to the press!' %>
   <% end %>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
